@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@700&display=swap');
+
 :root{
     --view-width-large: 1920px;
     --view-width-medium: 1366px;
-    --view-width-small: 600px;
+    --view-width-small: 640px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
 }
 
 /* Nav Bar */
@@ -13,6 +20,7 @@ nav{
     margin-left: -50vw;
     left: 50%;
     height: 60px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navigationList{
@@ -38,6 +46,7 @@ nav li a{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 1.5rem;
+    white-space: nowrap;
 }
 
 nav li a:hover{
@@ -91,19 +100,72 @@ nav li a:hover{
 
 /* Technical Skills */
 
-main > * {
-    border: solid black 1px;
-}
-
 #skillsMainBlock{
    margin-top: 65px;
 }
 
+#skillsContainer{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#skillsContainer > section{
+    border: solid black 1px;
+}
 
 /* Passion Projects */
 
+main > * {
+    border: solid black 1px;
+}
+
 #passionMainBlock{
     margin-top: 65px;
+}
+
+#gameMedia * {
+    margin: 0;
+    padding: 0;
+    border: solid black 1px;
+} 
+
+#gameMedia{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#gameMedia > figure{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#videoWithDescription{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#videoWithDescription *{
+    width: 550px;
+}
+
+#modelingSection * {
+    margin: 0;
+    padding: 0;
+}
+
+#modelingSection > ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid black 1px;
+}
+
+#modelingSection > ul > li{
+    border: solid black 1px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
