@@ -1,0 +1,115 @@
+:root{
+    --view-width-large: 1920px;
+    --view-width-medium: 1366px;
+    --view-width-small: 600px;
+}
+
+/* Nav Bar */
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    height: 60px;
+}
+
+#navigationList{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.navigationLink{
+    display: inline-block;
+    border: solid black 1px;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+nav li a:hover{
+    background-color: #111;
+}
+
+/* Home Page */
+
+#homeMainBlock{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+}
+
+#homeMainBlock > h1{
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    margin-left: 25%;
+}
+
+#homeMainBlock > p{
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    margin-left: 25%;
+}
+
+#homeMainBlock > picture{
+    grid-row: 1 / span 3;
+    grid-column: 3;
+    margin-right: 40%;
+    margin-top: 4%;
+}
+
+#socialMediaIcons{
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    margin-left: 25%;
+}
+
+#socialMediaIcons > ol{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+} 
+
+#socialMediaIcons li{
+    display: inline-block;
+}
+
+
+/* Technical Skills */
+
+main > * {
+    border: solid black 1px;
+}
+
+#skillsMainBlock{
+   margin-top: 65px;
+}
+
+
+/* Passion Projects */
+
+#passionMainBlock{
+    margin-top: 65px;
+}
+
+
+/* Contact */
+
+#contactMainBlock{
+    margin-top: 65px;
+}
+

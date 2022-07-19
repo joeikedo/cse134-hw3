@@ -5,45 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joe Ikedo's Homepage</title>
     <link rel="icon" href="media/computer_favicon.png" />
+    <link rel="stylesheet" href="defaultStyle.css" media="screen" type="text/css"/>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="technicalSkills.html">Technical Skills</a></li>
-                <li><a href="passionProjects.html">Passion Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="experiments.html">Experiments</a></li>
+            <ul id="navigationList">
+                <li class="navigationLink"><a href="index.html">Home</a></li>
+                <li class="navigationLink"><a href="technicalSkills.html">Technical Skills</a></li>
+                <li class="navigationLink"><a href="passionProjects.html">Passion Projects</a></li>
+                <li class="navigationLink"><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="homeMainBlock">
         <h1>I'm Joe Ikedo</h1>
         <p>I'm a senior <strong>Computer Science</strong> major at UCSD and software development is what I'm passionate about. 
             I'm interested in WebDev, GameDev, Cybersecurity and much more.</p>
         <picture>
             <source media="(orientation: portrait)" srcset="media/selfie.jpg">
             <img src="media/selfie.jpg" alt="Selfie">
-          </picture>
+        </picture>
+        <div id="socialMediaIcons">
+            <ol>
+                <li>
+                    <a href="https://github.com/joeikedo">
+                        <img src="media/github_logo.png" alt="Github Profile Link">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/joe-ikedo/">
+                        <img src="media/linkedin_logo.png" alt="LinkedIn Profile Link">
+                    </a>
+                </li>
+            </ol>
+        </div>
     </main>
-
-    <footer>
-        <h2>Find me on:</h2>
-        <ol>
-            <li>
-                <a href="https://github.com/joeikedo">
-                    <img src="media/github_logo.png" alt="Github Profile Link">
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/joe-ikedo/">
-                    <img src="media/linkedin_logo.png" alt="LinkedIn Profile Link">
-                </a>
-            </li>
-        </ol>
-    </footer>
 
 </body>
 </html>
