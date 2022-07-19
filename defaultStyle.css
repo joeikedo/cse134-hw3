@@ -23,14 +23,19 @@ nav{
     font-family: 'Roboto', sans-serif;
 }
 
-#navigationList{
+nav > ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    list-style-type: none;
 }
 
-.navigationLink{
-    display: inline-block;
-    border: solid black 1px;
+nav > ul > li{
+    /* border: solid black 1px; */
+    border-right: 1px solid #bbb;
+}
+
+nav > ul > li:last-child{
+    border-right: none;
 }
 
 nav ul{
@@ -50,7 +55,29 @@ nav li a{
 }
 
 nav li a:hover{
-    background-color: #111;
+    /* background-color: #111; */
+    background-color: #04AA6D;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+/* Navbar for Mobile size screen*/
+
+#test{
+    display: none;
+}
+
+@media screen and (max-width: 620px){
+    /*Note: CSS variables don't work with Media Queries natively, which is why I am using "620px" here.*/
+    nav{
+        display: none;
+    }
+
+    #test{
+        display: block;
+    }
 }
 
 /* Home Page */
