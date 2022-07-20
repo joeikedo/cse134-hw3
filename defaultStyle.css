@@ -3,17 +3,15 @@
 
 :root{
     --view-width-large: 1920px;
-    --view-width-medium: 1366px;
+    --view-width-medium: 1280px;
     --view-width-small: 620px;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-}
 
-/* main > * {
-    border: solid black 1px;
-} */
+    background: 	#f0ebd7;
+}
 
 /* Nav Bar Desktop Default */
 
@@ -31,10 +29,7 @@ nav ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
-}
-
-nav li{
-    border-right: 1px solid #F9F9F9;
+    box-shadow: 0px 0px 5px black;
 }
 
 nav li:last-child{
@@ -44,7 +39,7 @@ nav li:last-child{
 nav ul{
     margin: 0;
     padding: 0;
-    background-color: #CDF0EA;
+    background-color: white;
 }
 
 nav a{
@@ -58,20 +53,36 @@ nav a{
 }
 
 nav a:hover{
-    background-color: #F6C6EA;
+    background-color: lightblue;
     transition: background-color 0.5s ease-out;
 }
 
 .active {
-    background-color: #F6C6EA;
+    background-color: lightblue;
 }
 
 
 /* Home Page */
 
-#homeBody{
-    background:url(media/ocean_background.jpg) no-repeat center center fixed;
-    background-size: cover;
+@media screen and (min-width: 621px) and (max-width: 1280px){
+    #homeBody{
+        background:url(media/ocean_background_medium.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1920px){
+    #homeBody{
+        background:url(media/ocean_background_large.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 1921px){
+    #homeBody{
+        background:url(media/ocean_background_extra_large.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
 }
 
 #homeMainBlock{
@@ -116,6 +127,10 @@ nav a:hover{
 
 #socialMediaIcons li{
     display: inline-block;
+}
+
+#profilePhoto{
+    border-radius: 25px;
 }
 
 
@@ -204,16 +219,13 @@ nav a:hover{
 }
 
 @media screen and (max-width: 620px){
-    /*Note: CSS variables don't work with Media Queries natively, which is why I am using "620px" here.*/
 
-    /* Show the Checkbox which should be the hamburger menu*/ /*I don't think I need this??*/
-    /* #hamburgerToggle{
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-    } */
+    #homeBody{
+        background:url(media/ocean_background_small.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /*Note: CSS variables don't work with Media Queries natively, which is why I am using "620px" here.*/
 
     /* Hide the navbar boxes*/
     nav ul{
@@ -240,6 +252,12 @@ nav a:hover{
         grid-template-columns: 1fr ;
         grid-template-rows: repeat(4, 1fr);
     }
+
+    #hamburgerToggle:checked ~ #hamburgerButton{
+        background:url(media/cross_icon.svg) no-repeat;
+        background-color: white;
+    }
+
 
     /* Rearrange Homepage Grid for Mobile*/
 
@@ -276,6 +294,10 @@ nav a:hover{
         grid-column: 1;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    #socialMediaIcons li:first-child{
+        margin-right: 5em;
     }
 
 
