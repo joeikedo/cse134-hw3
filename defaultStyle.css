@@ -4,14 +4,18 @@
 :root{
     --view-width-large: 1920px;
     --view-width-medium: 1366px;
-    --view-width-small: 640px;
+    --view-width-small: 620px;
 }
 
 body {
     font-family: 'Inter', sans-serif;
 }
 
-/* Nav Bar */
+/* main > * {
+    border: solid black 1px;
+} */
+
+/* Nav Bar Desktop Default */
 
 nav{
     position: fixed;
@@ -30,7 +34,7 @@ nav ul{
 }
 
 nav li{
-    border-right: 1px solid #bbb;
+    border-right: 1px solid #F9F9F9;
 }
 
 nav li:last-child{
@@ -40,12 +44,12 @@ nav li:last-child{
 nav ul{
     margin: 0;
     padding: 0;
-    background-color: #333;
+    background-color: #CDF0EA;
 }
 
 nav a{
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -54,66 +58,25 @@ nav a{
 }
 
 nav a:hover{
-    background-color: #04AA6D;
+    background-color: #F6C6EA;
     transition: background-color 0.5s ease-out;
 }
 
 .active {
-    background-color: #04AA6D;
+    background-color: #F6C6EA;
 }
 
-/* Navbar for Mobile size screen*/
-
-#hamburgerToggle{
-    display: none;
-}
-
-#hamburgerButton{
-    display: none;
-}
-
-@media screen and (max-width: 620px){
-    /*Note: CSS variables don't work with Media Queries natively, which is why I am using "620px" here.*/
-
-    /* Show the Checkbox which should be the hamburger menu*/
-    #hamburgerToggle{
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-    }
-
-    /* Hide the navbar boxes*/
-    nav ul{
-        /* display: none; */
-        visibility: collapse;
-    }
-    
-
-    #hamburgerButton{
-        display: inline-block; 
-        position: fixed;
-        top: 50px;
-        left: 30px;
-        border: 1px solid;
-        border-radius: 3px;
-        user-select: none;
-    }
-
-    #hamburgerToggle:checked ~ #test{
-        visibility: visible;
-    }
-    
-
-
-}
 
 /* Home Page */
 
+#homeBody{
+    background:url(media/ocean_background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
 #homeMainBlock{
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
     grid-template-columns: repeat(3, 1fr);
     margin-top: 10%;
 }
@@ -122,6 +85,7 @@ nav a:hover{
     grid-row: 1;
     grid-column: 1 / span 2;
     margin-left: 25%;
+    padding-top: 12%;
 }
 
 #homeMainBlock > p{
@@ -140,7 +104,8 @@ nav a:hover{
 #socialMediaIcons{
     grid-row: 3;
     grid-column: 1 / span 2;
-    margin-left: 25%;
+    margin-left: 35%;
+    padding-bottom: 17%;
 }
 
 #socialMediaIcons > ol{
@@ -171,10 +136,6 @@ nav a:hover{
 }
 
 /* Passion Projects */
-
-main > * {
-    border: solid black 1px;
-}
 
 #passionMainBlock{
     margin-top: 65px;
@@ -231,3 +192,114 @@ main > * {
     margin-top: 65px;
 }
 
+
+/* Hamburger Navbar for Mobile size screen */
+
+#hamburgerToggle{
+    display: none;
+}
+
+#hamburgerButton{
+    display: none;
+}
+
+@media screen and (max-width: 620px){
+    /*Note: CSS variables don't work with Media Queries natively, which is why I am using "620px" here.*/
+
+    /* Show the Checkbox which should be the hamburger menu*/ /*I don't think I need this??*/
+    /* #hamburgerToggle{
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+    } */
+
+    /* Hide the navbar boxes*/
+    nav ul{
+        visibility: collapse;
+    }
+    
+    #hamburgerButton{
+        background:url(media/hamburger_icon.svg) no-repeat;
+        background-color: white;
+        display: inline-block; 
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        top: 30px;
+        left: 30px;
+        border: 2px solid;
+        border-radius: 3px;
+        user-select: none;
+    }
+
+    #hamburgerToggle:checked ~ #navList{
+        margin-top: 83px;
+        visibility: visible;
+        grid-template-columns: 1fr ;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    /* Rearrange Homepage Grid for Mobile*/
+
+    #homeMainBlock{
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr; 
+    }
+    
+    #homeMainBlock > h1{
+        grid-row: 1;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0%;
+    }
+
+    #homeMainBlock > picture{
+        grid-row: 2;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #homeMainBlock > p{
+        grid-row: 3;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #socialMediaIcons{
+        grid-row: 4;
+        grid-column: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* Rearrange Skills Grid for Mobile*/
+
+    #skillsMainBlock{
+        margin-top: 83px;
+     }
+     
+     #skillsContainer{
+         display: grid;
+         grid-template-rows: 1fr;
+         grid-template-columns: 1fr;
+     }
+
+    
+     /* Passion Page move conent down slightly for mobile so doesn't overlap with hamburger*/
+     #passionMainBlock{
+        margin-top: 83px;
+    }
+
+    /* Contact Page move conent down slightly for mobile so doesn't overlap with hamburger*/
+    #contactMainBlock{
+        margin-top: 83px;
+    }
+
+}
