@@ -23,18 +23,17 @@ nav{
     font-family: 'Roboto', sans-serif;
 }
 
-nav > ul{
+nav ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
 }
 
-nav > ul > li{
-    /* border: solid black 1px; */
+nav li{
     border-right: 1px solid #bbb;
 }
 
-nav > ul > li:last-child{
+nav li:last-child{
     border-right: none;
 }
 
@@ -44,7 +43,7 @@ nav ul{
     background-color: #333;
 }
 
-nav li a{
+nav a{
     display: block;
     color: white;
     text-align: center;
@@ -54,9 +53,9 @@ nav li a{
     white-space: nowrap;
 }
 
-nav li a:hover{
-    /* background-color: #111; */
+nav a:hover{
     background-color: #04AA6D;
+    transition: background-color 0.5s ease-out;
 }
 
 .active {
@@ -65,19 +64,49 @@ nav li a:hover{
 
 /* Navbar for Mobile size screen*/
 
-#test{
+#hamburgerToggle{
+    display: none;
+}
+
+#hamburgerButton{
     display: none;
 }
 
 @media screen and (max-width: 620px){
     /*Note: CSS variables don't work with Media Queries natively, which is why I am using "620px" here.*/
-    nav{
-        display: none;
+
+    /* Show the Checkbox which should be the hamburger menu*/
+    #hamburgerToggle{
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
     }
 
-    #test{
-        display: block;
+    /* Hide the navbar boxes*/
+    nav ul{
+        /* display: none; */
+        visibility: collapse;
     }
+    
+
+    #hamburgerButton{
+        display: inline-block; 
+        position: fixed;
+        top: 50px;
+        left: 30px;
+        border: 1px solid;
+        border-radius: 3px;
+        user-select: none;
+    }
+
+    #hamburgerToggle:checked ~ #test{
+        visibility: visible;
+    }
+    
+
+
 }
 
 /* Home Page */
