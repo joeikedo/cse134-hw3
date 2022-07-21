@@ -24,6 +24,7 @@
     --nav-padding-left-right: 16px;
     --nav-width: 100vw;
     --nav-text-color: black;
+    --nav-shadow-size: 5px;
 
     --hamburger-offset: 30px;
     --renpy-figure-width: 500px;
@@ -59,7 +60,7 @@ nav ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px var(--nav-shadow-size) black;
 }
 
 nav li:last-child{
@@ -95,6 +96,9 @@ nav a:hover{
 /* Home Page */
 
 /*Note: Ocean background photo from Harli Marten: https://unsplash.com/photos/n7a2OJDSZns*/
+/*Note: I intended to use these 3 view width variables for breakpoint media queries. However
+    it seems that this is not possible without using SCSS or plugins. 
+    (Source: https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries)*/
 @media screen and (min-width: 621px) and (max-width: 1280px){
     #homeBody{
         background:url(media/ocean_background_medium.jpg) no-repeat center center fixed;
