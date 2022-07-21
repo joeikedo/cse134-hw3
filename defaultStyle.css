@@ -19,6 +19,15 @@
     --nav-font-size: 1.5em;
     --nav-transition-time: 0.5s;
     --profile-photo-border-radius: 25px;
+    --media-icon-width: 50px;
+    --nav-padding-top-bottom: 14px;
+    --nav-padding-left-right: 16px;
+    --nav-width: 100vw;
+    --nav-text-color: black;
+
+    --hamburger-offset: 30px;
+    --renpy-figure-width: 500px;
+    --video-width: 550px;
 }
 
 body {
@@ -39,7 +48,7 @@ body {
 nav{
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: var(--nav-width);
     margin-left: -50vw;
     left: 50%;
     height: var(--nav-height);
@@ -65,9 +74,9 @@ nav ul{
 
 nav a{
     display: block;
-    color: black;
+    color: var(--nav-text-color);
     text-align: center;
-    padding: 14px 16px;
+    padding: var(--nav-padding-top-bottom) var(--nav-padding-left-right);
     text-decoration: none;
     font-size: var(--nav-font-size);
     white-space: nowrap;
@@ -148,7 +157,7 @@ nav a:hover{
 
 #socialMediaIcons li{
     display: inline-block;
-    width: 50px;
+    width: var(--media-icon-width);
     transition: transform .7s ease-in-out;
 }
 
@@ -214,7 +223,7 @@ nav a:hover{
 }
 
 #gameMedia > figure{
-    max-width: 500px;
+    max-width: var(--renpy-figure-width);
     margin-left: auto;
     margin-right: auto;
 }
@@ -225,7 +234,7 @@ nav a:hover{
 }
 
 #videoWithDescription *{
-    max-width: 550px;
+    max-width: var(--video-width);
 }
 
 #modelingSection ul {
@@ -358,10 +367,10 @@ nav a:hover{
         background-color: white;
         display: inline-block; 
         position: fixed;
-        height: 50px;
-        width: 50px;
-        top: 30px;
-        left: 30px;
+        height: var(--media-icon-width);
+        width: var(--media-icon-width);
+        top: var(--hamburger-offset);
+        left: var(--hamburger-offset);
         border: 2px solid;
         border-radius: 3px;
         user-select: none;
