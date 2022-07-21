@@ -24,12 +24,17 @@
     </header>
 
     <main id="contactMainBlock" class="contentMainBlock">
-        <h1 class="pageHeader">Contact Joe Ikedo</h1>
+        <!--These overflow:hidden divs are to keep animation from expanding page-->
+        <div style="overflow:hidden;">
+            <h1 class="pageHeader">Contact Joe Ikedo</h1>
+        </div>
 
         <hr>
 
         <section>
-            <h2>Contact Info</h2>
+            <div style="overflow:hidden;">
+                <h2 id="contactInfoHeader">Contact Info</h2>
+            </div>
             <ul>
                 <li>joeikedo@gmail.com</li>
                 <li><span class="phoneNumber">(760) 277-5668</span></li>
@@ -39,7 +44,9 @@
         <hr>
 
         <section>
-            <h2>Media Outlets</h2>
+            <div style="overflow:hidden;">
+                <h2 id="mediaOutletsHeader">Media Outlets</h2>
+            </div>
             <ol>
                 <li>
                     <a href="https://github.com/joeikedo">
