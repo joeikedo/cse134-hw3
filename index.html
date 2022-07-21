@@ -28,8 +28,10 @@
         <p>I'm a senior <strong>Computer Science</strong> major at UCSD and software development is what I'm passionate about. 
             I'm interested in WebDev, GameDev, Cybersecurity and much more.</p>
         <picture>
-            <source media="(orientation: portrait)" srcset="media/selfie.jpg">
-            <img id="profilePhoto" src="media/selfie.jpg" alt="Selfie">
+            <!-- <source media="(orientation: portrait)" srcset="media/selfie.jpg"> -->
+            <source media="(orientation: portrait)">
+            <img id="profilePhoto" srcset="media/selfie_small.jpg 230w, media/selfie.jpg 300w" sizes="(max-width: 620px) 230px,
+            300px" src="media/selfie.jpg" alt="Joe Ikedo Selfie">
         </picture>
         <div id="socialMediaIcons">
             <ol>
