@@ -2,15 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@700&display=swap');
 
 :root{
+    /*Note: I intended to use these 3 view width variables for breakpoint media queries. However
+    it seems that this is not possible without using SCSS or plugins. 
+    (Source: https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries)
+    
     --view-width-large: 1920px;
     --view-width-medium: 1280px;
     --view-width-small: 620px;
+    */
+
+    --background-page-color: #f0ebd7;
+    --nav-active-color: lightblue;
+    --top-margin-height: 65px;
+    --top-margin-height-mobile: 83px;
+    --nav-height: 60px;
+    --nav-font-size: 1.5em;
+    --nav-transition-time: 0.5s;
+    --profile-photo-border-radius: 25px;
 }
 
 body {
     font-family: 'Inter', sans-serif;
+    background: var(--background-page-color)
+}
 
-    background: 	#f0ebd7;
+.pageHeader{
+    text-align: center;
+}
+
+.contentMainBlock{
+    margin-top: var(--top-margin-height);
 }
 
 /* Nav Bar Desktop Default */
@@ -21,7 +42,7 @@ nav{
     width: 100vw;
     margin-left: -50vw;
     left: 50%;
-    height: 60px;
+    height: var(--nav-height);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -48,22 +69,23 @@ nav a{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: var(--nav-font-size);
     white-space: nowrap;
 }
 
 nav a:hover{
-    background-color: lightblue;
-    transition: background-color 0.5s ease-out;
+    background-color: var(--nav-active-color);
+    transition: background-color var(--nav-transition-time) ease-out;
 }
 
 .active {
-    background-color: lightblue;
+    background-color: var(--nav-active-color);
 }
 
 
 /* Home Page */
 
+/*Note: Ocean background photo from Harli Marten: https://unsplash.com/photos/n7a2OJDSZns*/
 @media screen and (min-width: 621px) and (max-width: 1280px){
     #homeBody{
         background:url(media/ocean_background_medium.jpg) no-repeat center center fixed;
@@ -87,7 +109,6 @@ nav a:hover{
 
 #homeMainBlock{
     display: grid;
-    /* grid-template-rows: repeat(3, 1fr); */
     grid-template-columns: repeat(3, 1fr);
     margin-top: 10%;
 }
@@ -130,14 +151,28 @@ nav a:hover{
 }
 
 #profilePhoto{
-    border-radius: 25px;
+    border-radius: var(--profile-photo-border-radius);
 }
 
 
 /* Technical Skills */
 
-#skillsMainBlock{
-   margin-top: 65px;
+#skillsMainBlock h2{
+    margin-left: 1em;
+    text-decoration: underline;
+}
+
+#skillsMainBlock h3{
+    margin-left: 1.3em;
+}
+
+#skillsMainBlock table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#jobDetails{
+    margin-left: 1.5em;
 }
 
 #skillsContainer{
@@ -152,14 +187,19 @@ nav a:hover{
 
 /* Passion Projects */
 
-#passionMainBlock{
-    margin-top: 65px;
+#passionMainBlock h2{
+    text-decoration: underline;
+}
+
+#gamedevSection{
+    margin-bottom: 4%;
+    border-bottom: solid black 1px;
+    padding-bottom: 5%;
 }
 
 #gameMedia * {
     margin: 0;
     padding: 0;
-    border: solid black 1px;
 } 
 
 #gameMedia{
@@ -168,7 +208,7 @@ nav a:hover{
 }
 
 #gameMedia > figure{
-    width: 500px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -179,10 +219,10 @@ nav a:hover{
 }
 
 #videoWithDescription *{
-    width: 550px;
+    max-width: 550px;
 }
 
-#modelingSection * {
+#modelingSection ul {
     margin: 0;
     padding: 0;
 }
@@ -191,11 +231,9 @@ nav a:hover{
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    border: solid black 1px;
 }
 
 #modelingSection > ul > li{
-    border: solid black 1px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -203,8 +241,50 @@ nav a:hover{
 
 /* Contact */
 
-#contactMainBlock{
-    margin-top: 65px;
+#contactMainBlock h2{
+    text-align: center;
+}
+
+#contactMainBlock ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contactMainBlock ul li:first-child{
+    margin-bottom: 1em;
+}
+
+#contactMainBlock ul li:last-child{
+    margin-bottom: 1em;
+}
+
+#contactMainBlock ol{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+#contactMainBlock ol li:first-child{
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+#contactMainBlock ol li:last-child{
+    margin-left: 2%;
+    margin-right:auto;
+}
+
+#contactFooter{
+    text-align: center;
+}
+
+#message{
+    width: 95vw;
+    height: 10em;
 }
 
 
@@ -247,7 +327,7 @@ nav a:hover{
     }
 
     #hamburgerToggle:checked ~ #navList{
-        margin-top: 83px;
+        margin-top: var(--top-margin-height-mobile);
         visibility: visible;
         grid-template-columns: 1fr ;
         grid-template-rows: repeat(4, 1fr);
@@ -303,25 +383,14 @@ nav a:hover{
 
     /* Rearrange Skills Grid for Mobile*/
 
-    #skillsMainBlock{
-        margin-top: 83px;
-     }
-     
-     #skillsContainer{
-         display: grid;
-         grid-template-rows: 1fr;
-         grid-template-columns: 1fr;
-     }
-
-    
-     /* Passion Page move conent down slightly for mobile so doesn't overlap with hamburger*/
-     #passionMainBlock{
-        margin-top: 83px;
+    #skillsContainer{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
     }
 
-    /* Contact Page move conent down slightly for mobile so doesn't overlap with hamburger*/
-    #contactMainBlock{
-        margin-top: 83px;
+    .contentMainBlock{
+        margin-top: var(--top-margin-height-mobile);
     }
 
 }

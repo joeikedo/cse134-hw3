@@ -23,8 +23,8 @@
         </nav>
     </header>
 
-    <main id="contactMainBlock">
-        <h1>Contact Joe Ikedo</h1>
+    <main id="contactMainBlock" class="contentMainBlock">
+        <h1 class="pageHeader">Contact Joe Ikedo</h1>
 
         <hr>
 
@@ -58,15 +58,16 @@
 
     </main>
 
-    <footer>
-        <h2>Email Me:</h2>
-        <form action="http://httpbin.org/post" method="post">
+    <footer id="contactFooter">
+        <h2>Email Me</h2>
+        <formaction="http://httpbin.org/post" method="post">
             <fieldset>
                 <legend>Email Details</legend>
                 <label for="userEmail">Email</label>
                 <input type="email" id="userEmail" name="userEmail" autofocus>
                 <label for="subjectLine">Subject</label>
                 <input type="text" id="subjectLine" name="subjectLine">
+                <br><br>
                 <label for="message">Message</label>
                 <textarea id="message" name="message"></textarea>
                 <button type="submit">Submit</button>
