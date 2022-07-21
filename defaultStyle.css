@@ -283,7 +283,6 @@ nav a:hover{
 #contactMainBlock ol li:last-child{
     margin-left: 2%;
     margin-right:auto;
-    /* transition: transform .7s ease-in-out; */
 }
 
 #contactMainBlock ol li{
@@ -293,12 +292,6 @@ nav a:hover{
 #contactMainBlock ol li:hover{
     transform: rotate(360deg);
 }
-
-
-/* #contactMainBlock ol li:last-child:hover{
-    transform: rotate(360deg);
-} */
-
 
 #contactFooter{
     text-align: center;
@@ -326,8 +319,6 @@ nav a:hover{
         background:url(media/ocean_background_small.jpg) no-repeat center center fixed;
         background-size: cover;
     }
-
-    /*Note: CSS variables don't work with Media Queries natively, which is why I am using "620px" here.*/
 
     /* Hide the navbar boxes*/
     nav ul{
